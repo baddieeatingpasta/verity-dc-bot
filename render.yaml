@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: verity-bot
+    runtime: python
+    plan: free
+    region: virginia
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: EXA_API_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: SUPABASE_URL
+        value: https://xpyehgntauxubawlrthp.supabase.co
